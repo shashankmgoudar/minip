@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<h1>update</h1>
+<form method="POST" enctype="application/x-www-form-urlencoded">
+    <label for="id">id:</label>
+    <input type="text" id="id" name="id" value="{{ student.id}}" required><br><br>
+
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name" value="{{ student.name}}" required><br><br>
+
+    <label for="gender">gender:</label>
+    <input type="text" id="gender" name="gender" value="{{student.gender}}" required><br><br>
+
+    <label for="previous_score">previous_score:</label>
+    <input type="text" id="previous_score" name="previous_score" value="{{student.previous_score}}" required><br><br>
+
+    <label for="current_score">current_score:</label>
+    <input type="text" id="current_score" name="current_score" value="{{student.current_score}}" required><br><br>
+
+    <label for="attendance">attendance:</label>
+    <input type="text" id="attendance" name="attendance" value="{{student.attendance}}" required><br><br>
+
+    <label for="percentage">percentage:</label>
+    <input type="text" id="percentage" name="percentage" value="{{student.percentage}}" required><br><br>
+
+    <input type="submit" value="update"> <a href="/"> </a>
+</form>
+
+{% endblock %}

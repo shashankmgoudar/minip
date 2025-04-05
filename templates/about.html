@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<title>About Us - Student Performance App</title>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background: linear-gradient(135deg,#007bff, #007bff);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 32px;
+    }
+
+    section {
+        margin: 40px auto;
+        max-width: 900px;
+        padding: 20px;
+    }
+
+    .toggle-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .toggle {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        border: 2px solid #ddd;
+    }
+
+    .toggle:hover {
+        background-color: #f7f7f7;
+        transform: translateY(-5px);
+    }
+
+    .toggle-header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #34495e;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .toggle-content {
+        display: none;
+        margin-top: 15px;
+        color: #7f8c8d;
+        font-size: 1em;
+    }
+
+    .toggle.active .toggle-content {
+        display: block;
+    }
+
+    footer {
+        background-color: #34495e;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+</style>
+
+<section>
+    <div class="toggle-container">
+
+        <!-- Toggle 1: Who We Are -->
+        <div class="toggle">
+            <div class="toggle-header">
+                <span>Who We Are</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="toggle-content">
+                <p>We are a team dedicated to improving the educational experience by helping students, parents, and educators track academic performance efficiently.</p>
+            </div>
+        </div>
+
+        <!-- Toggle 2: App Features -->
+        <div class="toggle">
+            <div class="toggle-header">
+                <span>App Features</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="toggle-content">
+                <p>Our app allows easy access to grades, subject performance, progress tracking, and personalized feedback to help students excel in their studies.</p>
+            </div>
+        </div>
+
+        <!-- Toggle 3: Our Mission -->
+        <div class="toggle">
+            <div class="toggle-header">
+                <span>Our Mission</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="toggle-content">
+                <p>We strive to empower students by giving them the tools they need to succeed academically, with an emphasis on personalized learning and growth.</p>
+            </div>
+        </div>
+
+        <!-- Toggle 4: Get Started -->
+        <div class="toggle">
+            <div class="toggle-header">
+                <span>Get Started</span>
+                <span class="toggle-icon">+</span>
+            </div>
+            <div class="toggle-content">
+                <p>Join thousands of students and educators using our app to improve performance and streamline academic management.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Student Performance App. All rights reserved.</p>
+</footer>
+
+<script>
+    // JavaScript to handle the toggle functionality
+    const toggles = document.querySelectorAll('.toggle');
+
+    toggles.forEach(toggle => {
+        const header = toggle.querySelector('.toggle-header');
+        header.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            const icon = header.querySelector('.toggle-icon');
+            icon.textContent = toggle.classList.contains('active') ? '-' : '+';
+        });
+    });
+</script>
+
+{% endblock %}
+
